@@ -36,11 +36,22 @@
 //   [1000, 1001, 857, 1],
 // ]);
 
-function confirmEnding(str, target) {
-  const len = -target.length;
-  let modStr = str.slice(0, len);
-  modStr += target;
-  return modStr === str;
+// function confirmEnding(str, target) {
+//   const len = -target.length;
+//   let modStr = str.slice(0, len);
+//   modStr += target;
+//   return modStr === str;
+// }
+
+// confirmEnding("Bastian", "n");
+
+
+function repeatStringNumTimes(str, num) {
+  let strArr = []
+  for (let i = 0; i < num; i++) {
+    strArr.push(str)
+  }
+  return strArr.join("")
 }
 
-confirmEnding("Bastian", "n");
+repeatStringNumTimes("abc", 3);
