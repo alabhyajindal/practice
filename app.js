@@ -55,15 +55,27 @@
 
 // repeatStringNumTimes("abc", 3);
 
-function truncateString(str, num) {
-  if (num < str.length) {
-    return str.slice(0, num) + "...";
-  } else {
-    return str;
+// function truncateString(str, num) {
+//   if (num < str.length) {
+//     return str.slice(0, num) + "...";
+//   } else {
+//     return str;
+//   }
+// }
+
+// truncateString(
+//   "A-tisket a-tasket A green and yellow basket",
+//   "A-tisket a-tasket A green and yellow basket".length
+// );
+
+
+function findElement(arr, func) {
+  let num = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (func(arr[i])) {
+      return arr[i]
+    }
   }
 }
 
-truncateString(
-  "A-tisket a-tasket A green and yellow basket",
-  "A-tisket a-tasket A green and yellow basket".length
-);
+findElement([1, 2, 3, 4], num => num % 2 === 0);
