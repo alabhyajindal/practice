@@ -45,13 +45,25 @@
 
 // confirmEnding("Bastian", "n");
 
+// function repeatStringNumTimes(str, num) {
+//   let strArr = []
+//   for (let i = 0; i < num; i++) {
+//     strArr.push(str)
+//   }
+//   return strArr.join("")
+// }
 
-function repeatStringNumTimes(str, num) {
-  let strArr = []
-  for (let i = 0; i < num; i++) {
-    strArr.push(str)
+// repeatStringNumTimes("abc", 3);
+
+function truncateString(str, num) {
+  if (num < str.length) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
   }
-  return strArr.join("")
 }
 
-repeatStringNumTimes("abc", 3);
+truncateString(
+  "A-tisket a-tasket A green and yellow basket",
+  "A-tisket a-tasket A green and yellow basket".length
+);
