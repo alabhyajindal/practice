@@ -79,10 +79,34 @@
 
 // findElement([1, 2, 3, 4], num => num % 2 === 0);
 
-function booWho(bool) {
-  let result = true;
-  bool === true || bool === false ? (result = true) : (result = false);
-  return result;
+// function booWho(bool) {
+//   let result = true;
+//   bool === true || bool === false ? (result = true) : (result = false);
+//   return result;
+// }
+
+// booWho(null);
+
+function titleCase(str) {
+  let modStr = [...str];
+  // changing all characters to lowercase
+  for (let i = 0; i < modStr.length; i++) {
+    modStr[i] = modStr[i].toLowerCase();
+  }
+  modStr[0] = modStr[0].toUpperCase();
+  // modStr = modStr.join("")
+  let spaces = [];
+  for (let i = 0; i < modStr.length; i++) {
+    if (modStr[i] === " ") {
+      spaces.push(i);
+    }
+  }
+
+  for (let space of spaces) {
+    modStr[space + 1] = modStr[space + 1].toUpperCase();
+  }
+
+  return modStr.join("");
 }
 
-booWho(null);
+titleCase("sHoRt AnD sToUt");
