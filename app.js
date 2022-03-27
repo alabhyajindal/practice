@@ -68,14 +68,21 @@
 //   "A-tisket a-tasket A green and yellow basket".length
 // );
 
+// function findElement(arr, func) {
+//   let num = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (func(arr[i])) {
+//       return arr[i]
+//     }
+//   }
+// }
 
-function findElement(arr, func) {
-  let num = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (func(arr[i])) {
-      return arr[i]
-    }
-  }
+// findElement([1, 2, 3, 4], num => num % 2 === 0);
+
+function booWho(bool) {
+  let result = true;
+  bool === true || bool === false ? (result = true) : (result = false);
+  return result;
 }
 
-findElement([1, 2, 3, 4], num => num % 2 === 0);
+booWho(null);
