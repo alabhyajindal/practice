@@ -111,11 +111,21 @@
 
 // titleCase("sHoRt AnD sToUt");
 
-function frankenSplice(arr1, arr2, n) {
-  let modArr = [...arr2];
-  modArr.splice(n, 0, ...arr1);
+// function frankenSplice(arr1, arr2, n) {
+//   let modArr = [...arr2];
+//   modArr.splice(n, 0, ...arr1);
 
-  return modArr;
+//   return modArr;
+// }
+
+// frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+function bouncer(arr) {
+  let trueArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    Boolean(arr[i]) ? trueArr.push(arr[i]) : null;
+  }
+  return trueArr;
 }
 
-frankenSplice([1, 2, 3], [4, 5, 6], 1);
+bouncer([7, "ate", "", false, 9]);
