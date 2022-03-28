@@ -120,12 +120,24 @@
 
 // frankenSplice([1, 2, 3], [4, 5, 6], 1);
 
-function bouncer(arr) {
-  let trueArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    Boolean(arr[i]) ? trueArr.push(arr[i]) : null;
-  }
-  return trueArr;
+// function bouncer(arr) {
+//   let trueArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     Boolean(arr[i]) ? trueArr.push(arr[i]) : null;
+//   }
+//   return trueArr;
+// }
+
+// bouncer([7, "ate", "", false, 9]);
+
+function getIndexToIns(arr, num) {
+  let sortArr = [...arr];
+  sortArr.push(num);
+  sortArr = sortArr.sort((a, b) => {
+    return a - b;
+  });
+
+  return sortArr.indexOf(num);
 }
 
-bouncer([7, "ate", "", false, 9]);
+getIndexToIns([2, 5, 10], 15);
