@@ -87,26 +87,35 @@
 
 // booWho(null);
 
-function titleCase(str) {
-  let modStr = [...str];
-  // changing all characters to lowercase
-  for (let i = 0; i < modStr.length; i++) {
-    modStr[i] = modStr[i].toLowerCase();
-  }
-  modStr[0] = modStr[0].toUpperCase();
-  // modStr = modStr.join("")
-  let spaces = [];
-  for (let i = 0; i < modStr.length; i++) {
-    if (modStr[i] === " ") {
-      spaces.push(i);
-    }
-  }
+// function titleCase(str) {
+//   let modStr = [...str];
+//   // changing all characters to lowercase
+//   for (let i = 0; i < modStr.length; i++) {
+//     modStr[i] = modStr[i].toLowerCase();
+//   }
+//   modStr[0] = modStr[0].toUpperCase();
+//   // modStr = modStr.join("")
+//   let spaces = [];
+//   for (let i = 0; i < modStr.length; i++) {
+//     if (modStr[i] === " ") {
+//       spaces.push(i);
+//     }
+//   }
 
-  for (let space of spaces) {
-    modStr[space + 1] = modStr[space + 1].toUpperCase();
-  }
+//   for (let space of spaces) {
+//     modStr[space + 1] = modStr[space + 1].toUpperCase();
+//   }
 
-  return modStr.join("");
+//   return modStr.join("");
+// }
+
+// titleCase("sHoRt AnD sToUt");
+
+function frankenSplice(arr1, arr2, n) {
+  let modArr = [...arr2];
+  modArr.splice(n, 0, ...arr1);
+
+  return modArr;
 }
 
-titleCase("sHoRt AnD sToUt");
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
