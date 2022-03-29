@@ -130,14 +130,41 @@
 
 // bouncer([7, "ate", "", false, 9]);
 
-function getIndexToIns(arr, num) {
-  let sortArr = [...arr];
-  sortArr.push(num);
-  sortArr = sortArr.sort((a, b) => {
-    return a - b;
-  });
+// function getIndexToIns(arr, num) {
+//   let sortArr = [...arr];
+//   sortArr.push(num);
+//   sortArr = sortArr.sort((a, b) => {
+//     return a - b;
+//   });
 
-  return sortArr.indexOf(num);
+//   return sortArr.indexOf(num);
+// }
+
+// getIndexToIns([2, 5, 10], 15);
+
+function mutation(arr) {
+  // Making a copy of the array and using it for internal operations
+  let modArr = [...arr];
+  // Looping over the array and making each array item lowecase
+  for (let i = 0; i < modArr.length; i++) {
+    modArr[i] = modArr[i].toLowerCase();
+  }
+
+  // Declaring a global count variable
+  let count = 0;
+  // Looping over the array. Appending 1 to count if the alphabet in arr[1] is present in arr[0]
+  for (let i = 0; i < modArr[1].length; i++) {
+    for (let j = 0; j < modArr[0].length; j++) {
+      if (modArr[1][i] === modArr[0][j]) {
+        count++;
+        break;
+      }
+    }
+  }
+
+  // If count is equal to the length of arr[1] then it means that all the alphabets of arr[1] are present in arr[0]. Therefore we return true, in this case
+
+  return count === modArr[1].length;
 }
 
-getIndexToIns([2, 5, 10], 15);
+mutation(["floor", "for"]);
