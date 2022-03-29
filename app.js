@@ -142,29 +142,39 @@
 
 // getIndexToIns([2, 5, 10], 15);
 
-function mutation(arr) {
-  // Making a copy of the array and using it for internal operations
-  let modArr = [...arr];
-  // Looping over the array and making each array item lowecase
-  for (let i = 0; i < modArr.length; i++) {
-    modArr[i] = modArr[i].toLowerCase();
+// function mutation(arr) {
+//   // Making a copy of the array and using it for internal operations
+//   let modArr = [...arr];
+//   // Looping over the array and making each array item lowecase
+//   for (let i = 0; i < modArr.length; i++) {
+//     modArr[i] = modArr[i].toLowerCase();
+//   }
+
+//   // Declaring a global count variable
+//   let count = 0;
+//   // Looping over the array. Appending 1 to count if the alphabet in arr[1] is present in arr[0]
+//   for (let i = 0; i < modArr[1].length; i++) {
+//     for (let j = 0; j < modArr[0].length; j++) {
+//       if (modArr[1][i] === modArr[0][j]) {
+//         count++;
+//         break;
+//       }
+//     }
+//   }
+
+//   // If count is equal to the length of arr[1] then it means that all the alphabets of arr[1] are present in arr[0]. Therefore we return true, in this case
+
+//   return count === modArr[1].length;
+// }
+
+// mutation(["floor", "for"]);
+
+function chunkArrayInGroups(arr, size) {
+  let chunk = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunk.push(arr.slice(i, i + size));
   }
-
-  // Declaring a global count variable
-  let count = 0;
-  // Looping over the array. Appending 1 to count if the alphabet in arr[1] is present in arr[0]
-  for (let i = 0; i < modArr[1].length; i++) {
-    for (let j = 0; j < modArr[0].length; j++) {
-      if (modArr[1][i] === modArr[0][j]) {
-        count++;
-        break;
-      }
-    }
-  }
-
-  // If count is equal to the length of arr[1] then it means that all the alphabets of arr[1] are present in arr[0]. Therefore we return true, in this case
-
-  return count === modArr[1].length;
+  return chunk;
 }
 
-mutation(["floor", "for"]);
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
